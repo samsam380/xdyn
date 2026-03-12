@@ -226,6 +226,17 @@ Results can be plotted using [Matplotlib](https://matplotlib.org/) and
 docker run -it --rm -u $(id -u):$(id -g) -v $(pwd):/build -w /build/build_debian/executables/demos xdyn tutorial_01_falling_ball.yml --dt 0.1 --tend 1 -o csv | python3 postprocessing/Python/plot.py tutorial_01_plot 0 3
 ~~~~~~~
 
+
+You can also create a quick animated trajectory preview (2D external visualizer)
+from a CSV output:
+
+~~~~~~~{.bash}
+python3 postprocessing/Python/simple_visualizer.py results.csv -o xdyn_preview.gif
+~~~~~~~
+
+The script auto-detects common columns such as `x(...)`, `y(...)`, `t`, and
+`psi(...)`. Use `--x-col`, `--y-col`, `--t-col`, `--psi-col` to override names.
+
 ## Debugging
 
 ### Valgrind
