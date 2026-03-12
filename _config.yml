@@ -1,0 +1,8 @@
+# GitHub Pages / Jekyll configuration used for repository browsing docs.
+#
+# This repository contains simulation datasets and legacy documentation files
+# that are not valid UTF-8 markdown and should not be processed by Jekyll.
+# Excluding them avoids Pages build failures.
+exclude:
+  - validation/
+  - code/
